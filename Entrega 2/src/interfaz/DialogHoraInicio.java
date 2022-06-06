@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 public class DialogHoraInicio extends JDialog implements ActionListener
 {
 	private Interfaz ventana;
-	private int indexActi;
+	private String idActi;
 	
 	private final static String OK = "OK";
 	private JButton bCambiar;
@@ -26,10 +26,10 @@ public class DialogHoraInicio extends JDialog implements ActionListener
 	private JTextField tfMinutos;
 	
 	
-	public DialogHoraInicio(Interfaz interfaz, int selectedIndex) {
+	public DialogHoraInicio(Interfaz interfaz, String repartes) {
 		// TODO Auto-generated constructor stub
 		this.ventana = interfaz;
-		this.indexActi = selectedIndex;
+		this.idActi = repartes;
 		setLayout(null);
 		setSize(400, 800);
 		setResizable( false );
@@ -70,7 +70,7 @@ public class DialogHoraInicio extends JDialog implements ActionListener
 		if(comando.equals(OK))
 		{
 			LocalTime horanueva = LocalTime.of(Integer.parseInt(tfHora.getText()), Integer.parseInt(tfMinutos.getText()));
-			this.ventana.cambiarHoraInicial(horanueva, indexActi);
+			this.ventana.cambiarHoraInicial(horanueva, idActi);
 			this.ventana.pasoAHomeProy();
 			dispose();
 		}

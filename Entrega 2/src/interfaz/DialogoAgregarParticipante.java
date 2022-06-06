@@ -60,7 +60,7 @@ public class DialogoAgregarParticipante extends JDialog implements ActionListene
 		{
 			
 			this.ventana.aniadirParticipante(tfNombre.getText(),tfcorreo.getText());
-			this.ventana.pasoAHomeProy();
+			//this.ventana.pasoAHomeProy();
 			dispose();
 		}
 	}

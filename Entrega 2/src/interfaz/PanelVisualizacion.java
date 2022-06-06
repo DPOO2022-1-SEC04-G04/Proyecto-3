@@ -110,7 +110,7 @@ public class PanelVisualizacion extends JPanel
 
 	
 
-	public PanelVisualizacion(Interfaz interfaz, HashMap<LocalDate, String> lasfechas) {
+	public PanelVisualizacion(Interfaz interfaz, HashMap<LocalDate, String> lasfechas) throws Exception {
 		this.ventana = interfaz;
 		this.fechas = lasfechas;
     	setLayout( new GridLayout(30,2) );
@@ -121,38 +121,47 @@ public class PanelVisualizacion extends JPanel
         setPreferredSize( new Dimension( 400, 1800 ) );
         setBackground(new Color(214, 255, 222));
         
-        for (Map.Entry<LocalDate, String> pareja : fechas.entrySet())
+        if(fechas.size()<1)
         {
-        	LocalDate lafecha = pareja.getKey();
-        	if(lafecha.getYear()<aniomin)
-        	{
-        		aniomin = lafecha.getYear();
-        	}
-        	else if(lafecha.getYear()>aniomax)
-        	{
-        		aniomax = lafecha.getYear();
-        	}
+        	throw new Exception("NO HAY FECHAS PA MOSTRAR");
+        }
+        else
+        {
+
+            for (Map.Entry<LocalDate, String> pareja : fechas.entrySet())
+            {
+            	LocalDate lafecha = pareja.getKey();
+            	if(lafecha.getYear()<aniomin)
+            	{
+            		aniomin = lafecha.getYear();
+            	}
+            	else if(lafecha.getYear()>aniomax)
+            	{
+            		aniomax = lafecha.getYear();
+            	}
+            }
+            
+            String[] anios = new String[aniomax-aniomin+1];  //OJO CON ESTE ERROR: DEBERIA IR aniomax-aniomin+1
+            for (int i = aniomin; i<aniomax+1;i++)
+            {
+            	anios[i-aniomin] = String.valueOf(i);
+            	
+            }
+            String[] meses = new String[] {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"
+            		, "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
+            
+            anio = new JComboBox(anios);
+    		add(anio);
+    		anio.setSelectedIndex(0);
+    		
+    		mes = new JComboBox(meses);
+    		add(mes);
+    		mes.setSelectedIndex(0);
+    		lnada = new JLabel();
+    		lnada.setText(" ");
+    		add(lnada);
         }
         
-        String[] anios = new String[aniomax-aniomin+1];
-        for (int i = aniomin; i<aniomax+1;i++)
-        {
-        	anios[i-aniomin] = String.valueOf(i);
-        	
-        }
-        String[] meses = new String[] {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"
-        		, "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
-        
-        anio = new JComboBox(anios);
-		add(anio);
-		anio.setSelectedIndex(0);
-		
-		mes = new JComboBox(meses);
-		add(mes);
-		mes.setSelectedIndex(0);
-		lnada = new JLabel();
-		lnada.setText(" ");
-		add(lnada);
 		
 		mostrar = new JButton("Mostrar");
 		

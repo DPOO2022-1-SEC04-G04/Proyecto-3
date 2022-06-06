@@ -1,0 +1,71 @@
+GUIA DE USO DE LA APLICACION
+0- (OPCIONAL SI NO CORRE) CAMBIE LA LIBRERIA/BUILD PATH DEL PROYECTO 
+	(CLICK DERECHO EN EL PROYECTO EN ECLIPSE ->BUILD PATH -> CONFIGURE BUILD PATH ->LIBRARIES 
+	->LE DA CLICK A LA QUE DIGA "UNBOUND" -> CLICK EN EDIT -> OPRIMA EL WORKSPACE DEFAULT JRE
+	->APPLY AND CLOSE) LUEGO DE ESTO DEBERÍA PODERSE CORRER SI ES QUE SALÍA ERROR EN TODO EL CODIGO
+1- EJECUTE LA CONSOLA COMO JAVA APP
+2- ESCOJA LA OPCION 1 PARA CREAR EL PROYECTO
+	2.1- Nombre del proyecto(sugerido : PruebaProyecto) y Enter
+	2.2- Descripcion del proyecto(sugerido : la descripcion del proyecto) y Enter
+	2.3- Nombre del dueño del proyecto(sugerido : pepito) y Enter
+	2.4- Correo del dueño del proyecto(sugerido : pepito@gmail.com) y Enter
+	2.5- Cuantos tipos de actividades (sugerido: 3)
+	2.6- Ingrese el nuevo tipo de actividad (sugerido: documentacion)
+	2.6- Ingrese el nuevo tipo de actividad (sugerido: disenio)
+	2.6- Ingrese el nuevo tipo de actividad (sugerido: implementacion)
+	2.7- Anio de inicio del proyecto(sugerido: 2000)
+	2.8- Mes de inicio del proyecto(sugerido: 12)
+	2.9- Dia de inicio del proyecto(sugerido: 12)
+	2.10- Sabe la fecha de finalizacion(sugerido: SI)
+	2.11- Anio de inicio del proyecto(sugerido: 2023)
+	2.12- Mes de inicio del proyecto(sugerido: 10)
+	2.13- Dia de inicio del proyecto(sugerido: 10)
+3- ESCOJA LA OPCION 2 PARA CREAR UN PARTICIPANTE
+	3.1 Ingrese el nombre del participante(sugerido: josefina)
+	3.2 Ingrese el correo del participante(sugerido: josefina@gmail.com)
+4- ESCOJA LA OPCION 3 PARA CREAR UNA ACTIVIDAD
+	4.1 Titulo de la actividad(sugerido: actividaduno)
+	4.2 Descripcion de la actividad(sugerido: la descripcion de actividaduno)
+	4.3 Participante(sugerido: 1)
+	4.4 Tipo de la actividad(sugerido: 1)
+	4.5 Hora de inicio de la actividad(sugerido: hora actual menos 1hora (ej: 09:20))
+5- ESCOJA LA OPCION 4 PARA CRONOMETRAR UNA ACTIVIDAD
+	5.1 Inicie el cronometro
+	5.2 Espere 4 min y pauselo(oprima 1 y Enter)
+	5.3 Espere 4 min y despauselo(oprima 1 y Enter)
+	5.4 Espere 4 min y finalicelo(oprima 2 y Enter)
+	5.5 Espere 4 min y pauselo(oprima 1 y Enter)
+	5.6 Titulo de la actividad(sugerido: actividadcrono)
+	5.7 Descripcion de la actividad(sugerido: la descripcion de actividadcrono)
+	5.8 Participante(sugerido: 1)
+	5.9 Tipo de la actividad(sugerido: 2)
+6- ESCOJA LA OPCION 5 PARA CAMBIAR LA FECHA DE UNA ACTIVIDAD
+	6.1 Escoja la actividad(sugerido: 1)
+	6.2 Anio de inicio del proyecto(sugerido: 2023)
+	6.3 Mes de inicio del proyecto(sugerido: 10)
+	6.4 Dia de inicio del proyecto(sugerido: 10)
+7- ESCOJA LA OPCION 6 PARA CAMBIAR LA HORA DE INICIO DE UNA ACTIVIDAD
+	7.1 Escoja la actividad(sugerido: 1)
+	7.2 Ingrese la nueva hora de inicio(sugerido 09:19)
+8- ESCOJA LA OPCION 7 PARA CAMBIAR LA HORA DE FIN DE UNA ACTIVIDAD
+	8.1 Escoja la actividad(sugerido: 1)
+	8.1 Ingrese la nueva hora de fin(sugerido: 09:29)
+9- ESCOJA LA OPCION 8 PARA MODIFICAR EL PARTICIPANTE DE UNA ACTIVIDAD
+	9.1 Escoja la actividad(sugerido: 1)
+	9.2 Escoja el nuevo participante(sugerido: 2)
+10- ESCOJA LA OPCION 9 PARA PEDIR EL REPORTE DE UN PARTICIPANTE:
+	10.1 Escoja el participante(sugerido: 2) Aquí va a poder comprobar el correcto funcionamiento de todas
+	las funciones de modificación, ya que ud no cargó ninguna actividad al josefina, pero le debe salir la
+	actividad 1 con todas sus modificaciones. Además, va a tener un primer acercamiento a los reportes
+11- ESCOJA LA OPCION 10 PARA MOSTRAR LA INFO DEL PROYECTO:
+	Aqui va a poder mirar el correcto funcionamiento de todas las funciones de guardado, pues se va a
+	toda la info cargada hasta ese momento
+12- INGRESE MÁS ACTIVIDADES, PARTICIPANTES Y PIDA MAS REPORTES PARA COMPROBAR EL CORRECTO FUNCIONAMIENTO DE LOS
+INDICES Y ESTADISTICAS DE LOS REPORTES
+	Aqui va a poder verificar la información adicional del correcto funcionamiento de la app, si tiene dudas
+	respecto de agregar actividad o participante consulte los pasos anteriores
+13- SALIR DE LA APLICAICION CON LA OPCION 11
+
+
+
+

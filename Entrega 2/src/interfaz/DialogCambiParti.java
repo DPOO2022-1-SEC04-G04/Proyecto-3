@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 public class DialogCambiParti extends JDialog implements ActionListener
 {
 	private Interfaz ventana;
-	private int indexActi;
+	private String idActi;
 	
 	private final static String OK = "OK";
 	private JButton bCambiar;
@@ -27,10 +27,10 @@ public class DialogCambiParti extends JDialog implements ActionListener
 	private JComboBox elParti;
 	
 	
-	public DialogCambiParti(Interfaz interfaz, int selectedIndex) {
+	public DialogCambiParti(Interfaz interfaz, String repartes) {
 		// TODO Auto-generated constructor stub
 		this.ventana = interfaz;
-		this.indexActi = selectedIndex;
+		this.idActi = repartes;
 		setLayout(null);
 		setSize(400, 800);
 		setResizable( false );
@@ -68,7 +68,7 @@ public class DialogCambiParti extends JDialog implements ActionListener
 		if(comando.equals(OK))
 		{
 			//LocalTime horanueva = LocalTime.of(Integer.parseInt(tfHora.getText()), Integer.parseInt(tfMinutos.getText()));
-			this.ventana.cambiarPartici(elParti.getSelectedIndex(), indexActi);
+			this.ventana.cambiarPartici(elParti.getSelectedIndex(), idActi);
 			this.ventana.pasoAHomeProy();
 			dispose();
 		}

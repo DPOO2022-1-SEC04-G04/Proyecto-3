@@ -29,7 +29,13 @@ public class PanelHomeProyecto extends JPanel implements ActionListener
 	private JLabel lnombre;
 	private JLabel ldescripcion;
 	private JButton bparticipantes;
-	private JButton bactividades;
+	private JButton baniadirtarea;
+	private JButton baniadirpaquete;
+	private JButton bborrartarea;
+	private JButton bborrarpaquete;
+	private JButton bmodificartarea;
+	private JButton bmodificarpaquete;
+	private JButton bmenutarea;
 	private JButton bvisualizacion;
 	private JButton bsalir;
     
@@ -57,21 +63,58 @@ public class PanelHomeProyecto extends JPanel implements ActionListener
             }  
         });
     	add(bparticipantes);
-        bparticipantes.setBounds(10, 400, 100, 50);
+        bparticipantes.setBounds(10, 200, 150, 50);
         
-        bactividades = new JButton("Actividades");
-    	bactividades.addActionListener(new ActionListener(){  
-        	public void actionPerformed(ActionEvent e){ 
-                ventana.pasoAHomeActi();  
+        bmenutarea = new JButton("Menu Tarea");
+    	bmenutarea.addActionListener(new ActionListener(){  
+        	public void actionPerformed(ActionEvent e){
+        		ventana.mostrarDialogTarea();
+                //ventana.pasoAHomeActi();  
             }  
         });
-    	add(bactividades);
-        bactividades.setBounds(160, 400, 100, 50);
+    	add(bmenutarea);
+        bmenutarea.setBounds(160, 200, 150, 50);
         
-        bvisualizacion = new JButton("Visualizacion");
+        baniadirpaquete = new JButton("Aniadir Paquete");
+    	baniadirpaquete.addActionListener(new ActionListener(){  
+        	public void actionPerformed(ActionEvent e){ 
+                ventana.mostrarDialogNewPack();  
+            }  
+        });
+    	add(baniadirpaquete);
+    	baniadirpaquete.setBounds(10, 270, 150, 50);
+        
+        baniadirtarea = new JButton("Aniadir Tarea");
+    	baniadirtarea.addActionListener(new ActionListener(){  
+        	public void actionPerformed(ActionEvent e){ 
+                ventana.pasoANewTarea();  
+            }  
+        });
+    	add(baniadirtarea);
+        baniadirtarea.setBounds(160, 270, 150, 50);
+        
+        bborrarpaquete = new JButton("Borrar Paquete");
+    	bborrarpaquete.addActionListener(new ActionListener(){  
+        	public void actionPerformed(ActionEvent e){ 
+                ventana.mostrarByePack();  
+            }  
+        });
+    	add(bborrarpaquete);
+    	bborrarpaquete.setBounds(10, 350, 150, 50);
+        
+        bborrartarea = new JButton("Borrar Tarea");
+    	bborrartarea.addActionListener(new ActionListener(){  
+        	public void actionPerformed(ActionEvent e){ 
+                ventana.mostrarByeTarea();  
+            }  
+        });
+    	add(bborrartarea);
+        bborrartarea.setBounds(160, 350, 150, 50);
+        
+        bvisualizacion = new JButton("Reportes");
         bvisualizacion.addActionListener(new ActionListener(){  
         	public void actionPerformed(ActionEvent e){
-                ventana.pasoAVisualizacion();  
+                ventana.pasoAMenuVisual();  
             }  
         });
         add(bvisualizacion);

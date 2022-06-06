@@ -1,6 +1,7 @@
 package interfaz;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -31,6 +32,10 @@ public class PanelHomeActi extends JPanel
 	private JButton bnuevacrono;
 	private JButton bmodificar;
 	private JButton bsalir;
+	private String idTarea;
+	private String tareaFull;
+	private JButton bfecha;
+	private JButton brespons;
 	//private int tamanioint;
 	//private int dificultad;
     
@@ -46,17 +51,59 @@ public class PanelHomeActi extends JPanel
         add(lnombre);
         lnombre.setBounds(10, 10, 300, 50);
         
-        ldescripcion = new JLabel();
-        ldescripcion.setText(this.ventana.sacarDescripcion());
-        add(ldescripcion);
-        ldescripcion.setBounds(10, 80, 300, 50);
+        //ldescripcion = new JLabel();
+        //ldescripcion.setText(this.ventana.sacarDescripcion());
+        //add(ldescripcion);
+        //ldescripcion.setBounds(10, 80, 300, 50);
+        
+
+        bfecha = new JButton("Cambiar tiempo planeado");
+    	bfecha.addActionListener(new ActionListener(){  
+        	public void actionPerformed(ActionEvent e){ 
+        		//nuevo.setText(String.valueOf(ventana.sacarSelcts()[0]));
+        		
+                ventana.mostrarTiempoPlaneado(tareaFull);  
+            }  
+        });
+    	add(bfecha);
+        bfecha.setBounds(10, 200, 150, 50);
+        
+    	bfecha = new JButton("Cambiar fecha fin estimada");
+    	bfecha.addActionListener(new ActionListener(){  
+        	public void actionPerformed(ActionEvent e){ 
+        		//nuevo.setText(String.valueOf(ventana.sacarSelcts()[0]));
+        		
+                ventana.mostrarCambiarFecha(tareaFull);  
+            }  
+        });
+    	add(bfecha);
+        bfecha.setBounds(10, 300, 150, 50);
+        
+        brespons = new JButton("Agregar Responsables");
+    	brespons.addActionListener(new ActionListener(){  
+        	public void actionPerformed(ActionEvent e){ 
+        		//nuevo.setText(String.valueOf(ventana.sacarSelcts()[0]));
+        		
+                ventana.mostrarAddRespon(tareaFull);  
+            }  
+        });
+    	add(brespons);
+        brespons.setBounds(200, 300, 150, 50);
+        
         
     	bnuevanormal = new JButton("Crear Actividad Normal");
     	bnuevanormal.addActionListener(new ActionListener(){  
         	public void actionPerformed(ActionEvent e){ 
         		//nuevo.setText(String.valueOf(ventana.sacarSelcts()[0]));
-        		
-                ventana.pasoACrearActi();  
+        		if(ventana.sacarPartisTarea(tareaFull).isEmpty())
+        		{
+        			ventana.mostrarExcepcion();
+        		}
+        		else
+        		{
+        			ventana.pasoACrearActi(tareaFull);
+        		}
+                  
             }  
         });
     	add(bnuevanormal);
@@ -67,7 +114,7 @@ public class PanelHomeActi extends JPanel
         	public void actionPerformed(ActionEvent e){ 
         		//nuevo.setText(String.valueOf(ventana.sacarSelcts()[0]));
         		
-                ventana.pasoACrearCrono();  
+                ventana.pasoACrearCrono(tareaFull);  
             }  
         });
     	add(bnuevacrono);
@@ -78,7 +125,7 @@ public class PanelHomeActi extends JPanel
         	public void actionPerformed(ActionEvent e){ 
         		//nuevo.setText(String.valueOf(ventana.sacarSelcts()[0]));
         		
-                ventana.pasoAModificar();  
+                ventana.pasoAModificar(tareaFull);  
             }  
         });
         add(bmodificar);
@@ -88,4 +135,13 @@ public class PanelHomeActi extends JPanel
         add(bsalir);
         bsalir.setBounds(200, 500, 150, 50);
     }
+
+	public void setTarea(String tarea) {
+		// TODO Auto-generated method stub
+		this.tareaFull = tarea;
+		String partesid[] = tarea.split("-");
+		String idDepurado = partesid[0];
+		this.idTarea = idDepurado;
+		lnombre.setText("Bienvenidx a "+tarea);
+	}
 }

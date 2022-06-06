@@ -7,6 +7,9 @@ import java.time.LocalTime;
 
 public class Actividad implements Serializable
 {
+	private String idPropio;
+	private String idTarea;
+	private boolean finaliza;
 	private String titulo;
 	private String descripcion;
 	private String tipo;
@@ -17,7 +20,7 @@ public class Actividad implements Serializable
 	private int duracion;
 	
 	public Actividad(String titulo, String descripcion, String tipo, Participante autor, LocalDate fechaRealizacion,
-						LocalTime horaInicio, LocalTime horaFin)
+						LocalTime horaInicio, LocalTime horaFin, String idTarea2, String idActi, boolean refinal)
 	{
 		this.titulo = titulo;
 		this.descripcion = descripcion;
@@ -29,11 +32,14 @@ public class Actividad implements Serializable
 		Duration laduracion = Duration.between(horaInicio, horaFin);
 		int finalduracion = Math.toIntExact(laduracion.getSeconds());
 		this.duracion= finalduracion;
+		this.idPropio = idActi;
+		this.idTarea = idTarea2;
+		this.finaliza = refinal;
 	}
 	
 	//CONSTRUCTOR PARA ACTIVIDADES CRONOMETRADAS
 	public Actividad(String titulo, String descripcion, String tipo, Participante autor, LocalDate fechaRealizacion,
-			LocalTime horaInicio, LocalTime horaFin, int duracion)
+			LocalTime horaInicio, LocalTime horaFin, int duracion, String padre, String propio, boolean finali)
 	{
 		this.titulo = titulo;
 		this.descripcion = descripcion;
@@ -43,6 +49,9 @@ public class Actividad implements Serializable
 		this.horaInicio = horaInicio;
 		this.horaFin = horaFin;
 		this.duracion = duracion;
+		this.idPropio = propio;
+		this.idTarea = padre;
+		this.finaliza = finali;
 	}
 	
 	public String getTitulo()
@@ -109,5 +118,20 @@ public class Actividad implements Serializable
 	public void modificarAutor(Participante newAutor)
 	{
 		this.autor = newAutor;	
+	}
+
+	public String getPadre() {
+		// TODO Auto-generated method stub
+		return idTarea;
+	}
+
+	public String getIdPropio() {
+		// TODO Auto-generated method stub
+		return idPropio;
+	}
+
+	public boolean getFinal() {
+		// TODO Auto-generated method stub
+		return finaliza;
 	}
 }

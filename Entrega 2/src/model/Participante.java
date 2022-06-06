@@ -11,6 +11,7 @@ public class Participante implements Serializable
 	private String nombre;
 	private String correo;
 	private ArrayList<Actividad> actividades;
+	private ArrayList<Tarea> tareas;
 	private Reporte reporte;
 	
 	public Participante(String nombre, String correo, ArrayList<String> tiposActividad)
@@ -18,6 +19,7 @@ public class Participante implements Serializable
 		this.nombre = nombre;
 		this.correo = correo;
 		this.actividades = new ArrayList<Actividad>();
+		this.tareas = new ArrayList<Tarea>();
 		this.reporte = new Reporte(tiposActividad);
 	}
 	
@@ -93,5 +95,15 @@ public class Participante implements Serializable
 		}
 		this.reporte.resetReporte();
 		return reporte;
+	}
+
+	public void aniadirTarea(Tarea tarea) {
+		// TODO Auto-generated method stub
+		tareas.add(tarea);
+	}
+
+	public ArrayList<Tarea> getTareas() {
+		// TODO Auto-generated method stub
+		return tareas;
 	}
 }

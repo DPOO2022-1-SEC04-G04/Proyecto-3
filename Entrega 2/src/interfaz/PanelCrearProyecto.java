@@ -8,6 +8,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.time.LocalDate;
 
+import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
@@ -47,6 +48,12 @@ public class PanelCrearProyecto extends JPanel implements ItemListener
 	private JCheckBox cbFechaf;
 	private JButton bSiguiente;
 	private boolean centinela = false;
+	private JLabel lNombrer;
+	private JTextField tfNombrer;
+	private JLabel lIdr;
+	private JTextField tfIdenr;
+	private JLabel lDescripr;
+	private JTextField tfDescripr;
 	
 	
 	public PanelCrearProyecto( Interfaz pVentana)
@@ -176,6 +183,33 @@ public class PanelCrearProyecto extends JPanel implements ItemListener
         add(tfTipos);
         tfTipos.setBounds(270, 470, 40, 30);
         
+        lIdr = new JLabel();
+        lIdr.setText("Identificador Paquete raiz");
+        add(lIdr);
+        lIdr.setBounds(10, 500, 100, 50);
+        
+        tfIdenr = new JTextField("Ingrese el id", 16);
+        add(tfIdenr);
+        tfIdenr.setBounds(10, 540, 150, 30);
+        
+        lNombrer = new JLabel();
+        lNombrer.setText("Nombre Paquete raiz");
+        add(lNombrer);
+        lNombrer.setBounds(10, 590, 100, 50);
+        
+        tfNombrer = new JTextField("Ingrese el nombre", 16);
+        add(tfNombrer);
+        tfNombrer.setBounds(10, 630, 150, 30);
+        
+        lDescripr = new JLabel();
+        lDescripr.setText("Descripcion paquete raiz");
+        add(lDescripr);
+        lDescripr.setBounds(10, 650, 100, 50);
+        
+        tfDescripr = new JTextField("Ingrese la descripcion", 16);
+        add(tfDescripr);
+        tfDescripr.setBounds(10, 700, 150, 30);
+        
         bSiguiente = new JButton("Siguiente");
     	bSiguiente.addActionListener(new ActionListener(){  
         	public void actionPerformed(ActionEvent e){ 
@@ -187,7 +221,7 @@ public class PanelCrearProyecto extends JPanel implements ItemListener
             }  
         });
     	add(bSiguiente);
-        bSiguiente.setBounds(10, 540, 100, 50);
+        bSiguiente.setBounds(210, 700, 100, 50);
     }
 	
 	public void itemStateChanged(ItemEvent e)
@@ -222,11 +256,11 @@ public class PanelCrearProyecto extends JPanel implements ItemListener
     	if(centinela)
     	{
     		LocalDate fechafinal = LocalDate.of(Integer.parseInt(tfAnioFin.getText()), Integer.parseInt(tfMesFin.getText()), Integer.parseInt(tfDiaFin.getText()));
-    		ventana.cambiarProyConFin(tfTitulo.getText(),tfDescrip.getText(), tfNombred.getText(),tfCorreod.getText(),fechainicio, fechafinal);
+    		ventana.cambiarProyConFin(tfTitulo.getText(),tfDescrip.getText(), tfNombred.getText(),tfCorreod.getText(),fechainicio, fechafinal, tfNombrer.getText(), tfDescripr.getText(),tfIdenr.getText());
     	}
     	else
     	{
-    		ventana.cambiarProySinFin(tfTitulo.getText(),tfDescrip.getText(), tfNombred.getText(),tfCorreod.getText(),fechainicio);
+    		ventana.cambiarProySinFin(tfTitulo.getText(),tfDescrip.getText(), tfNombred.getText(),tfCorreod.getText(),fechainicio, tfNombrer.getText(), tfDescripr.getText(),tfIdenr.getText());
     	}
 	}
 

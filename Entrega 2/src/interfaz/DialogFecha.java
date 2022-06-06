@@ -20,17 +20,17 @@ public class DialogFecha extends JDialog implements ActionListener
 	private JTextField tfMes;
 	private JTextField tfAnio;
 	
-	private int indexActi;
+	private String idActi;
 	
 	
 	private JButton bCambiar;
 	private Interfaz ventana;
 	private final static String OK = "OK";
 	
-	public DialogFecha(Interfaz ventana1, int indexact)
+	public DialogFecha(Interfaz ventana1, String repartes)
 	{
 		this.ventana = ventana1;
-		this.indexActi = indexact;
+		this.idActi = repartes;
 		setLayout(null);
 		setSize(400, 800);
 		setResizable( false );
@@ -78,7 +78,7 @@ public class DialogFecha extends JDialog implements ActionListener
 		if(comando.equals(OK))
 		{
 			LocalDate fechafinal = LocalDate.of(Integer.parseInt(tfAnio.getText()), Integer.parseInt(tfMes.getText()), Integer.parseInt(tfDia.getText()));
-			this.ventana.cambiarFecha(fechafinal, indexActi);
+			this.ventana.cambiarFecha(fechafinal, idActi);
 			this.ventana.pasoAHomeProy();
 			dispose();
 		}
