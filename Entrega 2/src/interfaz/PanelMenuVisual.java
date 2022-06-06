@@ -70,7 +70,7 @@ public class PanelMenuVisual extends JPanel
         	public void actionPerformed(ActionEvent e){ 
         		//nuevo.setText(String.valueOf(ventana.sacarSelcts()[0]));
         		
-                ventana.mostrarAddRespon(tareaFull);  
+                ventana.pasoaCalidad(tareaFull);  
             }  
         });
     	add(brespons);
@@ -80,15 +80,7 @@ public class PanelMenuVisual extends JPanel
     	bnuevanormal = new JButton("Equipo");
     	bnuevanormal.addActionListener(new ActionListener(){  
         	public void actionPerformed(ActionEvent e){ 
-        		//nuevo.setText(String.valueOf(ventana.sacarSelcts()[0]));
-        		if(ventana.sacarPartisTarea(tareaFull).isEmpty())
-        		{
-        			ventana.mostrarExcepcion();
-        		}
-        		else
-        		{
-        			ventana.pasoACrearActi(tareaFull);
-        		}
+        		ventana.pasoAEquipo();
                   
             }  
         });
@@ -111,7 +103,7 @@ public class PanelMenuVisual extends JPanel
         	public void actionPerformed(ActionEvent e){ 
         		//nuevo.setText(String.valueOf(ventana.sacarSelcts()[0]));
         		
-                ventana.pasoAModificar(tareaFull);  
+                //ventana.pasoAModificar(tareaFull);  
             }  
         });
         add(bmodificar);

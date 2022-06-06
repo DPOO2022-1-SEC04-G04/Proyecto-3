@@ -1,5 +1,8 @@
-Paquete;;;1;;;Raiz;;;DescripRaiz;;;2
-Paquete;;;1.1;;;po;;;po;;;1
-Tarea;;;1.1.1;;;sa;;;asas;;;0;;;docu;;;;;;36000
-Paquete;;;1.2;;;qwe;;;errty;;;1
-Tarea;;;1.2.1;;;sasas;;;wqwqw;;;0;;;docu;;;;;;99999999
+Paquete;;;1;;;PackRaiz;;;ladescripcion;;;3
+Paquete;;;1.1;;;PackHijoPrueba;;;ladescripcion;;;1
+Tarea;;;1.1.1;;;tareaDocu;;;ladescripcion;;;1;;;documentacion;;;;;;10800
+Paquete;;;1.2;;;PaqueteHijoDos;;;ladescripcion;;;1
+Tarea;;;1.2.1;;;TareaDise;;;dkclmsdlkm;;;1;;;disenio;;;;;;14400
+Paquete;;;1.3;;;PackHjio3;;;dlkmslkd;;;1
+Paquete;;;1.3.1;;;PackNieto;;;dcskldmcksl;;;1
+Tarea;;;1.3.1.1;;;TareaImplementacio;;;fkljcnskfvs;;;0;;;implementacion;;;;;;999999

@@ -412,4 +412,31 @@ public class Proyecto implements Serializable
 		// TODO Auto-generated method stub
 		return packraiz.sacarTiposEnOrden();
 	}
+
+	public ArrayList<Integer> sacarTerminPartis() {
+		// TODO Auto-generated method stub
+		ArrayList<Integer> rta = new ArrayList<Integer>(); 
+		for(Participante parti: participantes)
+		{
+			rta.add(parti.getTerminadas());
+		}
+		return rta;
+	}
+	
+	public ArrayList<Integer> sacarTodasPartis() {
+		// TODO Auto-generated method stub
+		ArrayList<Integer> rta = new ArrayList<Integer>(); 
+		for(Participante parti: participantes)
+		{
+			if(parti.getTareas()==null)
+			{
+				rta.add(0);
+			}
+			else
+			{
+				rta.add(parti.getTareas().size());
+			}
+		}
+		return rta;
+	}
 }

@@ -57,6 +57,8 @@ public class Interfaz extends JFrame
 	private PanelVisualizacion panelVisual;
 	private PanelMenuVisual panelMenuVisual;
 	private PanelAvanceVisual panelAvanceVisual;
+	private PanelCalidadPlaneacion panelCalidadPlaneacion;
+	private PanelVisualEquipo panelVisualEquipo;
 	private JScrollPane scroll;
 	private HashMap<LocalDate, String> lasfechas;
 	
@@ -195,6 +197,10 @@ public class Interfaz extends JFrame
 		{
 			panelMenuVisual.setVisible(false);
 		}
+		if(panelCalidadPlaneacion !=null)
+		{
+			panelCalidadPlaneacion.setVisible(false);
+		}
 	}
 	
 	public static void main( String[] pArgs )
@@ -245,6 +251,10 @@ public class Interfaz extends JFrame
 		if(panelAvanceVisual !=null)
 		{
 			panelAvanceVisual.setVisible(false);
+		}
+		if(panelCalidadPlaneacion !=null)
+		{
+			panelCalidadPlaneacion.setVisible(false);
 		}
 		panelHomeProyecto = new PanelHomeProyecto(this);
 		add( panelHomeProyecto);
@@ -364,7 +374,10 @@ public class Interfaz extends JFrame
 		{
 			panelAvanceVisual.setVisible(false);
 		}
-		
+		if(panelCalidadPlaneacion !=null)
+		{
+			panelCalidadPlaneacion.setVisible(false);
+		}
 		panelHomeActi.setVisible(true);
 		panelHomeActi.setTarea(tarea);
 		panelHomeProyecto.setVisible(false);
@@ -412,6 +425,10 @@ public class Interfaz extends JFrame
 		{
 			panelAvanceVisual.setVisible(false);
 		}
+		if(panelCalidadPlaneacion !=null)
+		{
+			panelCalidadPlaneacion.setVisible(false);
+		}
 
 		
 		panelCrearNormal.setVisible(true);
@@ -454,6 +471,10 @@ public class Interfaz extends JFrame
 		if(panelAvanceVisual !=null)
 		{
 			panelAvanceVisual.setVisible(false);
+		}
+		if(panelCalidadPlaneacion !=null)
+		{
+			panelCalidadPlaneacion.setVisible(false);
 		}
 		panelCrearCrono = new PanelCrearCrono(this, tareaFull);
 		add( panelCrearCrono);
@@ -625,6 +646,10 @@ public class Interfaz extends JFrame
 		if(panelAvanceVisual !=null)
 		{
 			panelAvanceVisual.setVisible(false);
+		}
+		if(panelCalidadPlaneacion !=null)
+		{
+			panelCalidadPlaneacion.setVisible(false);
 		}
 		//panelVisual.setVisible(true);
 		scroll.setVisible(true);
@@ -876,6 +901,10 @@ public class Interfaz extends JFrame
 		{
 			panelAvanceVisual.setVisible(false);
 		}
+		if(panelCalidadPlaneacion !=null)
+		{
+			panelCalidadPlaneacion.setVisible(false);
+		}
 		panelMenuVisual.setVisible(true);
 	}
 
@@ -920,7 +949,10 @@ public class Interfaz extends JFrame
 		{
 			panelMenuVisual.setVisible(false);
 		}
-		
+		if(panelCalidadPlaneacion !=null)
+		{
+			panelCalidadPlaneacion.setVisible(false);
+		}
 		panelAvanceVisual.setVisible(true);
 	}
 
@@ -962,6 +994,108 @@ public class Interfaz extends JFrame
 	public ArrayList<String> sacarTiposEnOrden() {
 		// TODO Auto-generated method stub
 		return proyecto.sacarTiposEnOrden();
+	}
+
+
+
+
+	public void pasoaCalidad(String tareaFull) {
+		// TODO Auto-generated method stub
+		panelCalidadPlaneacion = new PanelCalidadPlaneacion(this);
+		add( panelCalidadPlaneacion);
+		panelCalidadPlaneacion.setBounds(0, 0, 400, 800);
+
+		panelInicio.setVisible(false);
+		panelCrearProyecto.setVisible(false);
+		panelHomeProyecto.setVisible(false);
+		panelHomeActi.setVisible(false);
+		if(panelCrearNormal !=null)
+		{
+			panelCrearNormal.setVisible(false);
+		}
+		if(panelCrearCrono !=null)
+		{
+			panelCrearCrono.setVisible(false);
+		}
+		if(panelModi !=null)
+		{
+			panelModi.setVisible(false);
+		}
+		if(panelVisual !=null)
+		{
+			panelVisual.setVisible(false);
+		}
+		if(panelMenuVisual !=null)
+		{
+			panelMenuVisual.setVisible(false);
+		}
+		if(panelAvanceVisual !=null)
+		{
+			panelAvanceVisual.setVisible(false);
+		}
+		
+		panelCalidadPlaneacion.setVisible(true);
+		
+	}
+
+
+
+
+	public void pasoAEquipo() {
+		// TODO Auto-generated method stub
+		panelVisualEquipo = new PanelVisualEquipo(this);
+		add( panelVisualEquipo);
+		panelVisualEquipo.setBounds(0, 0, 400, 800);
+
+		panelInicio.setVisible(false);
+		panelCrearProyecto.setVisible(false);
+		panelHomeProyecto.setVisible(false);
+		panelHomeActi.setVisible(false);
+		if(panelCrearNormal !=null)
+		{
+			panelCrearNormal.setVisible(false);
+		}
+		if(panelCrearCrono !=null)
+		{
+			panelCrearCrono.setVisible(false);
+		}
+		if(panelModi !=null)
+		{
+			panelModi.setVisible(false);
+		}
+		if(panelVisual !=null)
+		{
+			panelVisual.setVisible(false);
+		}
+		if(panelMenuVisual !=null)
+		{
+			panelMenuVisual.setVisible(false);
+		}
+		if(panelAvanceVisual !=null)
+		{
+			panelAvanceVisual.setVisible(false);
+		}
+		if(panelCalidadPlaneacion !=null)
+		{
+			panelCalidadPlaneacion.setVisible(false);
+		}
+		panelVisualEquipo.setVisible(true);
+	}
+
+
+
+
+	public ArrayList<Integer> sacarTerminPartis() {
+		// TODO Auto-generated method stub
+		return proyecto.sacarTerminPartis();
+	}
+
+
+
+
+	public ArrayList<Integer> sacarSinFinPartis() {
+		// TODO Auto-generated method stub
+		return proyecto.sacarTodasPartis();
 	}
 	
 }

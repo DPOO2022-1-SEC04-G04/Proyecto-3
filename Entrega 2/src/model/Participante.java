@@ -106,4 +106,24 @@ public class Participante implements Serializable
 		// TODO Auto-generated method stub
 		return tareas;
 	}
+
+	public int getTerminadas() {
+		// TODO Auto-generated method stub
+		int rta =0;
+		if(tareas !=null)
+		{
+			if(!tareas.isEmpty())
+			{
+				for(Tarea tarea: tareas)
+				{
+					if(tarea.getFin())
+					{
+						rta+=1;
+					}
+				}
+			}
+		}
+		
+		return rta;
+	}
 }
